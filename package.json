@@ -1,0 +1,63 @@
+{
+  "name": "express-listen-promise",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Joe Flateau",
+  "main": "dist/index.js",
+  "module": "dist/express-listen-promise.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "analyze": "size-limit --why",
+    "build": "dts build",
+    "lint": "dts lint",
+    "prepare": "dts build",
+    "size": "size-limit",
+    "start": "dts watch",
+    "test": "dts test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "dts lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "size-limit": [
+    {
+      "path": "dist/express-listen-promise.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/express-listen-promise.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "peerDependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^7.0.5",
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/express": "^4.17.13",
+    "dts-cli": "^1.2.0",
+    "husky": "^7.0.4",
+    "release-it": "^14.12.4",
+    "size-limit": "^7.0.5",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.5"
+  }
+}
